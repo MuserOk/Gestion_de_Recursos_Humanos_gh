@@ -8,7 +8,6 @@ import pyodbc
 load_dotenv()
 
 # Cargar las credenciales de la base de datos desde el archivo .env
-
 DB_SERVER = os.getenv("DB_SERVER")
 DB_NAME = os.getenv("DB_NAME")
 
@@ -18,22 +17,22 @@ else:
     connection_string = (
         f'DRIVER={{SQL Server}};'
         f'SERVER={DB_SERVER};'  # nombre de servidor
-        f'DATABASE={DB_NAME};'  # Reemplaza con el nombre de tu base de datos
+        f'DATABASE={DB_NAME};'  # nombre de base de datos
         f'Trusted_Connection=yes;'
 )
 
 # CREAR LA CONEXION
 try:
-    conn = pyodbc.connect(connection_string)
+    conn = pyodbc.connect(connection_string)  # abrir la conexion
     print("Conexión exitosa")
 
 
 
-    # Aquí puedes realizar tus operaciones con la base de datos
+    # Aquí realizar las operaciones sobre la base de datos
 
 
 
-    conn.close()  # Cierra la conexión cuando hayas terminado
+    conn.close()  # cerrar la conexion
 
 except pyodbc.Error as ex:
     sqlstate = ex.args[0]

@@ -1,0 +1,13 @@
+1- Creé y diseñe la base de datos 
+2- Creé un repositorio en GitHub
+3- Vinculé el Visual Studio Code con mi nuevo repositorio
+4- Vinculé el VS con mi base de datos
+5- Instalé las dependencias necesarias para establecer la conexion con mi base de datos.
+    Dependencias: 
+        pip install python-dotenv
+        pip install pyodbc
+6- Para seguridad:
+    Creé un archivo .env  donde guardar datos sencibles como contraseñas
+    Creé un archivo .gitignore y referencié el archivo .env para que mis datos sencibles no se suba al repositorio
+7- Realicé la coneccion. 
+    Nota: mi conexion a DB lo hice a travez de Microsoft Authentication, por tal motivo no requerí de user ni password por la configuracion que tenia.
