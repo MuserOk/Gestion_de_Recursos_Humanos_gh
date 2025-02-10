@@ -1,0 +1,1 @@
+Select * from Rotacion_por_Turnos;

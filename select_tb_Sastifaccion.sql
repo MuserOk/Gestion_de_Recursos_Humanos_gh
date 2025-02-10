@@ -1,0 +1,1 @@
+select * from Encuestas_de_Sastifaccion;

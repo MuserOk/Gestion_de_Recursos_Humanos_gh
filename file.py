@@ -3,7 +3,7 @@
 from dotenv import load_dotenv
 import os
 import pyodbc
-
+import pandas as pd
 # Cargar variables de entorno
 load_dotenv()
 
@@ -26,12 +26,21 @@ try:
     conn = pyodbc.connect(connection_string)  # abrir la conexion
     print("Conexión exitosa")
 
+# Aquí realizar las operaciones sobre la base de datos
+# ----------------------------------------------------------------------
+# Leer la consulta desde el archivo .sql
+    with open("select_tb_Rotaciones.sql", "r", encoding="utf-8") as file:
+        query = file.read()  # Lee el contenido del archivo
+# Ejecutar la consulta y guardarla en un DataFrame
+    df_Rot = pd.read_sql(query, conn)
+    print(df_Rot.head())
 
+    with open("select_tb_Sastifaccion.sql", "r", encoding="utf-8") as file:
+        query = file.read()  
+    df_Sast = pd.read_sql(query, conn)
+    print(df_Sast.head())
 
-    # Aquí realizar las operaciones sobre la base de datos
-
-
-
+#----------------------------------------------------------------------
     conn.close()  # cerrar la conexion
 
 except pyodbc.Error as ex:
@@ -39,3 +48,4 @@ except pyodbc.Error as ex:
     error_message = ex.args[1]
     print(f"Error de conexión: {sqlstate}")
     print(f"Mensaje detallado: {error_message}")
+

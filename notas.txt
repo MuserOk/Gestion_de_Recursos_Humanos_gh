@@ -11,3 +11,7 @@
     Creé un archivo .gitignore y referencié el archivo .env para que mis datos sencibles no se suba al repositorio
 7- Realicé la coneccion. 
     Nota: mi conexion a DB lo hice a travez de Microsoft Authentication, por tal motivo no requerí de user ni password por la configuracion que tenia.
+
+8- instalé la dependencia de pandas
+9- accedí a mi db y guarde algunas tablas en df 
+10- 
